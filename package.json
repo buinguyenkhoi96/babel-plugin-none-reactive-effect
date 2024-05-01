@@ -1,0 +1,23 @@
+{
+  "name": "babel-plugin-none-reactive-effect",
+  "version": "0.0.1",
+  "description": "Babel plugin to get rid of non-reactive dependencies in useEffect",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buinguyenkhoi96/babel-plugin-none-reactive-effect.git"
+  },
+  "keywords": [
+    "babel",
+    "react"
+  ],
+  "author": "Khoi Bui",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/buinguyenkhoi96/babel-plugin-none-reactive-effect/issues"
+  },
+  "homepage": "https://github.com/buinguyenkhoi96/babel-plugin-none-reactive-effect#readme"
+}
