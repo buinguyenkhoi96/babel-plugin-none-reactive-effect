@@ -1,8 +1,8 @@
-import useStateMix from 'useStateMix';
+import useStateMixAlias from 'useStateMix';
 import { useState } from 'react';
 
 const TestComponent = () => {
-  const [stateWithMix, setStateWithMix] = useStateMix();
+  const [stateWithMix, setStateWithMix] = useStateMixAlias();
   const [test1, setTest1] = useState();
   const doSomething = (param) => {};
 
@@ -12,7 +12,7 @@ const TestComponent = () => {
     console.log(stateWithMix);
   }, [test1]);
 
-  // return <div>Test Component</div>;
+  return <div>{stateWithMix}</div>;
 };
 
 export default TestComponent;
