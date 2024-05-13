@@ -5,7 +5,8 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "babel ./tests/index.jsx -o ./tests/compiled.js",
-    "build": "babel src -d lib --watch",
+    "build": "babel src -d lib",
+    "build:watch": "babel src -d lib --watch",
     "help": "babel --help"
   },
   "repository": {
