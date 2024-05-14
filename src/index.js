@@ -1,7 +1,7 @@
 import fs from 'fs';
+import packageJson from '../package.json';
 
 const PACKAGE_NAME = 'useStateMix';
-const PLUGIN_NAME = 'babel-plugin-none-reactive-effect';
 
 const visitor = {
   ImportDeclaration(path, state) {
@@ -48,7 +48,7 @@ const visitor = {
 
 export default function ({ types: t }) {
   return {
-    name: PLUGIN_NAME,
+    name: packageJson.name,
     visitor: {
       Program(path, state) {
         fs.writeFileSync('./ast.json', JSON.stringify(path.node, null, 2));
