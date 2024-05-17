@@ -1,7 +1,7 @@
 import fs from 'fs';
 import packageJson from '../package.json';
 
-const PACKAGE_NAME = 'useStateMix';
+const PACKAGE_NAME = 'use-none-reactive-state';
 
 const visitor = {
   ImportDeclaration(path, state) {
