@@ -1,4 +1,4 @@
-import useStateMixAlias from 'useStateMix';
+import useStateMixAlias from 'use-none-reactive-state';
 import { useState } from 'react';
 
 const TestComponent = () => {

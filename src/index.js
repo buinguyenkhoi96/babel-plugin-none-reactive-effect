@@ -42,7 +42,7 @@ const visitor = {
       return;
     }
 
-    path.node.name = `${path.node.name}Ref`;
+    path.node.name = `${path.node.name}Ref.current`;
   }
 };
 
