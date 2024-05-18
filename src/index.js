@@ -51,7 +51,6 @@ export default function ({ types: t }) {
     name: packageJson.name,
     visitor: {
       Program(path, state) {
-        fs.writeFileSync('./ast.json', JSON.stringify(path.node, null, 2));
         path.traverse(visitor, { t, variableNames: [], importedPackageName: '' });
       },
     }
