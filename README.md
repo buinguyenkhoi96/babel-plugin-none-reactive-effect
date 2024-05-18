@@ -23,16 +23,16 @@ function Component() {
 }
 ```
 
-<b>With [babel plugin](https://www.npmjs.com/package/babel-plugin-none-reactive-effect)</b>
+<b>After transpiled</b>
 
 ```jsx
 import useNoneReactiveState from 'use-none-reactive-state'
 
 function Component() {
-  const [theme, setTheme] = useNoneReactiveState('dark')
+  const [theme, setTheme, themeRef] = useNoneReactiveState('dark')
 
   useEffect(() => {
-    connection.onConnect(() => console.log(theme))
+    connection.onConnect(() => console.log(themeRef.current))
   }, [])
 }
 ```
