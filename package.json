@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-none-reactive-effect",
-  "version": "0.0.1-alpha.2",
+  "version": "1.0.0",
   "description": "Babel plugin to get rid of non-reactive dependencies in useEffect",
   "main": "lib/index.js",
   "scripts": {
