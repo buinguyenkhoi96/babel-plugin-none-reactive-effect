@@ -10,13 +10,13 @@ While working on a project that need to deal with different sockets at the same 
 With [npm](https://www.npmjs.com):
 
 ```sh
-npm install --save-dev babel-preset-env
+npm install --save-dev babel-plugin-none-reactive-effect
 ```
 
 Or [yarn](https://yarnpkg.com):
 
 ```sh
-yarn add babel-preset-env --dev
+yarn add babel-plugin-none-reactive-effect --dev
 ```
 
 after install add it as the first plugin in your babel configuration
