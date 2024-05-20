@@ -1,8 +1,7 @@
 import fs from 'fs';
 
-const logs = [];
-
 const logger = (fileName) => {
+  const logs = [];
 
   return (log) => {
     logs.push(log);
