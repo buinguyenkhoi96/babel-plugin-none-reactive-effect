@@ -5,16 +5,20 @@ import { useState } from 'react';
 const TestComponent = () => {
   const [stateWithMix, setStateWithMix] = useStateMixAlias();
   const [test1, setTest1] = useState();
-  const doSomething = (param) => {};
+  // const doSomething = (param) => {};
 
-  const doSomething1 = useMemo(() => {
+  const doSomething1 = useCallback(() => {
     stateWithMix
-  }, []);
+  }, [stateWithMix]);
+
+  const doSomething2 = () => {
+    stateWithMix
+  };
 
   useEffect(() => {
-    domeSomething({ stateWithMix });
+    // doSomething({ stateWithMix });
     testSomething(stateWithMix);
-    doSomething1();
+    // doSomething2();
   }, [test1]);
 
   return <div>{stateWithMix}</div>;

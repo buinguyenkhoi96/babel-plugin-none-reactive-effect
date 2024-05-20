@@ -43,11 +43,16 @@ const visitor = {
       return;
     }
 
-    path.node.name = `${path.node.name}Ref.current`;
+    if (path.parentPath.isObjectProperty()) {
+      path.parentPath.get('value').replaceWith(t.identifier(`${path.node.name}Ref.current`));
+    } else {
+      path.replaceWith(t.identifier(`${path.node.name}Ref.current`));
+    }
+
   }
 };
 
-export default function ({ types: t, ...rest }) {
+export default function ({ types: t }) {
   return {
     name: packageJson.name,
     visitor: {
