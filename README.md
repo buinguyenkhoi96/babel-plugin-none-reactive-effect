@@ -6,15 +6,33 @@
   
 While working on a project that need to deal with different sockets at the same time. I had a several issues with handle reactive/non-reactive value in useEffect | useCallback | useMemo with React, in differents usecase reactive value can become non-reactive and vice versa. Take a look at [this react offical document](https://react.dev/learn/separating-events-from-effects#extracting-non-reactive-logic-out-of-effects) for further explaination
 
+## Installation
+With [npm](https://www.npmjs.com):
 
-### How it work under the hood?
+```sh
+npm install --save-dev babel-preset-env
+```
+
+Or [yarn](https://yarnpkg.com):
+
+```sh
+yarn add babel-preset-env --dev
+```
+
+after install add it as the first plugin in your babel configuration
+
+```json
+{ "plugins": ["babel-plugin-none-reactive-effect"] },
+```
+
+## How it work under the hood?
 
 Basically this plugin will look for the value and depedencies that being used inside useEffect | useMemo | useCallback. If the value is from [use-none-reactive-state](https://www.npmjs.com/package/use-none-reactive-state) and wasn't included in depedencies list, it's gonna replace with that one with ref value from <b>useNoneReactiveState</b>
 
 
-#### Examples
+### Examples
 
-##### Before transpiled
+#### Before transpiled
 
   
 
@@ -63,7 +81,7 @@ function  Component() {
 
   
 
-##### After transpiled
+#### After transpiled
 
   
 
