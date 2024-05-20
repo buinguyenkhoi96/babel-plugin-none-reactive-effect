@@ -1,6 +1,5 @@
-import fs from 'fs';
 import packageJson from '../package.json';
-
+import logger from './logs';
 const PACKAGE_NAME = 'use-none-reactive-state';
 
 const visitor = {
@@ -31,7 +30,9 @@ const visitor = {
 
     const useEffectCallExpressionPath = path.find((parentPath) =>
       t.isCallExpression(parentPath.node) &&
-      t.isIdentifier(parentPath.get('callee').node, { name: 'useEffect' }));
+      t.isIdentifier(parentPath.get('callee').node, { name: 'useEffect' }) ||
+      t.isIdentifier(parentPath.get('callee').node, { name: 'useCallback' }) ||
+      t.isIdentifier(parentPath.get('callee').node, { name: 'useMemo' }));
 
     if (
       !useEffectCallExpressionPath
@@ -46,11 +47,13 @@ const visitor = {
   }
 };
 
-export default function ({ types: t }) {
+export default function ({ types: t, ...rest }) {
   return {
     name: packageJson.name,
     visitor: {
       Program(path, state) {
+        const log = logger('Program');
+        log([state.filename, Object.keys(rest)]);
         path.traverse(visitor, { t, variableNames: [], importedPackageName: '' });
       },
     }
