@@ -1,5 +1,7 @@
 import fs from 'fs';
 
+const DEBUG = false;
+
 const logger = (fileName) => {
   const logs = [];
 

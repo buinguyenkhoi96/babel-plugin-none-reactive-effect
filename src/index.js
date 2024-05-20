@@ -52,8 +52,6 @@ export default function ({ types: t, ...rest }) {
     name: packageJson.name,
     visitor: {
       Program(path, state) {
-        const log = logger('Program');
-        log([state.filename, Object.keys(rest)]);
         path.traverse(visitor, { t, variableNames: [], importedPackageName: '' });
       },
     }
